@@ -3,38 +3,98 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Raketten er skudt afsted!</title>
+    <title>Månen er en luftpude</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="marquee" aria-hidden="true">
+      <span>
+        FTP til månen &nbsp;•&nbsp; GitHub til stjernerne &nbsp;•&nbsp; En
+        pingvin godkendte dette deploy &nbsp;•&nbsp; Ingen .git-filer blev
+        skadet &nbsp;•&nbsp;
+      </span>
+    </div>
+
     <div class="orb orb-a" aria-hidden="true"></div>
     <div class="orb orb-b" aria-hidden="true"></div>
+  <div class="duck-parade" aria-hidden="true">🦆🛸🦆🥞🦆</div>
 
     <main class="card">
-      <p class="badge">Deploy #2 fra Cursor</p>
-      <h1>Raketten er i luften!</h1>
+      <p class="badge">Deploy-klasse: spaghetti</p>
+
+      <p class="spin-pizza" aria-hidden="true">🍕</p>
+
+      <h1 id="headline">Velkommen til det helt almindelige</h1>
       <p class="lead">
-        GitHub tog imod filerne. Actions sagde
-        <strong>“wheee!”</strong> og FTP smed dem ind i
-        <code>githubtest</code> som varmt brød.
-      </p>
-      <p class="version" id="version">
-        Frisk fra ovnen: 19. nov 2026, kl. 22:42 - nu med farver og
-        konfetti-energi
+        Dette er en <em>meget officiel</em> hjemmeside drevet af ren tro på, at
+        <code>git push</code> er magi. Serveren sidder i
+        <code>githubtest</code> og tænker sikkert dybe FTP-tanker.
       </p>
 
+      <p class="version" id="version">
+        Udgave 3: 19. nov 2026 - nu med andagt, maraton og en irriterende knap
+      </p>
+
+      <section class="mood">
+        <p class="mood-label">Serverens humør lige nu:</p>
+        <div class="mood-bar" role="img" aria-label="Server humør: euphorisk">
+          <span class="mood-fill" style="width: 94%"></span>
+        </div>
+        <p class="mood-text" id="moodText">94% euforisk, 6% kaffe</p>
+      </section>
+
       <section class="fun-facts">
-        <h2>Officielt deploy-fakta</h2>
+        <h2>Wikianswer (upålidelig kilde)</h2>
         <ul class="checks">
-          <li>0 kæmpende FileZilla-vinduer i aften</li>
-          <li>3 filer, 0 drama, 1 tilfreds udvikler</li>
-          <li>Hvis du læser dette, virkede hele turen</li>
+          <li>Bagsejle er nu certificeret sky-captain</li>
+          <li>FTP står for “Fantastic Tiny Plunder”</li>
+          <li>Statistisk set: 1 af 1 deploys overrasker forfatteren</li>
         </ul>
       </section>
 
+      <button type="button" class="chaos-btn" id="chaosBtn">
+        Tryk mig, jeg er en FTP-knap
+      </button>
+      <p class="btn-counter" id="btnCounter">Antal kosmiske optryk: 0</p>
+
       <p class="footer-line">
-        Næste mission: ændre én linje, <code>git push</code>, fetch kaffe.
+        Næste skridt: commit, push, stir på Actions, triumfer.
       </p>
     </main>
+
+    <script>
+      const slogans = [
+        "Velkommen til det helt almindelige",
+        "DIN CSS ER MILD OG OMRØRT",
+        "Hej mor, jeg deployer!",
+        "Bagsejle.com: nu med flere pixels",
+        "index.html går til 11",
+        "Serveren blinker venligt",
+      ];
+
+      const btnTexts = [
+        "Udsend flere emojier",
+        "Ping FTP'en igen",
+        "Tilkald deploy-geden",
+        "Mere magi, tak",
+        "Hold for popcorn",
+      ];
+
+      let clicks = 0;
+      const btn = document.getElementById("chaosBtn");
+      const counter = document.getElementById("btnCounter");
+      const headline = document.getElementById("headline");
+      const moodText = document.getElementById("moodText");
+
+      btn.addEventListener("click", () => {
+        clicks += 1;
+        counter.textContent = "Antal kosmiske optryk: " + clicks;
+        headline.textContent = slogans[clicks % slogans.length];
+        btn.textContent = btnTexts[clicks % btnTexts.length];
+        moodText.textContent =
+          Math.min(99, 70 + clicks * 3) + "% euforisk, resten er kaos";
+        document.body.classList.toggle("party", clicks % 2 === 1);
+      });
+    </script>
   </body>
 </html>
