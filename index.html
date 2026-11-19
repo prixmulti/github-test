@@ -7,28 +7,28 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <h1>githubtest</h1>
-    </header>
-
-    <main>
-      <p>
-        Dette er en testside. Den ligger i mappen githubtest på serveren og
-        opdateres, når der pushes til main på GitHub.
+    <main class="wrap">
+      <p class="tag">Live fra serveren</p>
+      <h1>Hej, githubtest</h1>
+      <p class="lead">
+        Denne side kører via <strong>GitHub</strong> og
+        <strong>FTP</strong>. Når du pusher til <code>main</code>, lander
+        ændringerne her automatisk.
       </p>
 
-      <p class="meta">Sidst opdateret: 19. november 2026</p>
+      <div class="pill-row">
+        <span class="pill pill-ok">Deploy: aktiv</span>
+        <span class="pill">19. nov 2026</span>
+      </div>
 
-      <hr />
-
-      <p>
-        Kontakt: ingen. Formål: at verificere deploy fra GitHub Actions via
-        FTP.
-      </p>
+      <section class="steps">
+        <h2>Sådan opdaterer du</h2>
+        <ol>
+          <li>Rediger filer lokalt</li>
+          <li><code>git push origin main</code></li>
+          <li>Vent på grøn markering i Actions</li>
+        </ol>
+      </section>
     </main>
-
-    <footer>
-      <p>&copy; 2026</p>
-    </footer>
   </body>
 </html>

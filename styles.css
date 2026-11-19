@@ -1,49 +1,104 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: Times, "Times New Roman", serif;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #333;
-  background: #f5f5f5;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: #1e293b;
+  background: linear-gradient(160deg, #ecfeff 0%, #f0fdf4 45%, #faf5ff 100%);
+  display: grid;
+  place-items: center;
+  padding: 2rem 1.25rem;
 }
 
-header,
-main,
-footer {
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 1rem 1.25rem;
-}
-
-header {
+.wrap {
+  width: 100%;
+  max-width: 26rem;
+  padding: 2rem 2.25rem;
   background: #fff;
-  border-bottom: 1px solid #ccc;
+  border-radius: 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow:
+    0 4px 6px -1px rgba(15, 23, 42, 0.06),
+    0 20px 40px -12px rgba(14, 116, 144, 0.15);
+}
+
+.tag {
+  display: inline-block;
+  margin: 0 0 0.75rem;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #0e7490;
+  background: #cffafe;
+  border-radius: 999px;
 }
 
 h1 {
+  margin: 0 0 0.75rem;
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+.lead {
+  margin: 0 0 1.25rem;
+  line-height: 1.6;
+  color: #475569;
+}
+
+.lead strong {
+  color: #0f766e;
+}
+
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.pill {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #64748b;
+  background: #f1f5f9;
+  border-radius: 999px;
+}
+
+.pill-ok {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.steps h2 {
+  margin: 0 0 0.65rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #94a3b8;
+}
+
+.steps ol {
   margin: 0;
-  font-size: 1.5rem;
-  font-weight: normal;
-  color: #000;
+  padding-left: 1.2rem;
+  line-height: 1.75;
+  color: #475569;
 }
 
-main {
-  background: #fff;
-  min-height: 12rem;
-}
-
-.meta {
-  font-size: 0.875rem;
-  color: #666;
-}
-
-hr {
-  border: none;
-  border-top: 1px solid #ddd;
-  margin: 1.5rem 0;
-}
-
-footer {
-  font-size: 0.75rem;
-  color: #888;
+code {
+  font-size: 0.85em;
+  padding: 0.12em 0.4em;
+  background: #f1f5f9;
+  border-radius: 0.25rem;
+  color: #0e7490;
 }
