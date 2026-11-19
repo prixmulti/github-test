@@ -8,11 +8,18 @@
   </head>
   <body>
     <div class="marquee" aria-hidden="true">
-      <span>
-        FTP til månen &nbsp;•&nbsp; GitHub til stjernerne &nbsp;•&nbsp; En
-        pingvin godkendte dette deploy &nbsp;•&nbsp; Ingen .git-filer blev
-        skadet &nbsp;•&nbsp;
-      </span>
+      <div class="marquee-track">
+        <span class="marquee-copy">
+          FTP til månen &nbsp;•&nbsp; GitHub til stjernerne &nbsp;•&nbsp; En
+          pingvin godkendte dette deploy &nbsp;•&nbsp; Ingen .git-filer blev
+          skadet &nbsp;•&nbsp;
+        </span>
+        <span class="marquee-copy">
+          FTP til månen &nbsp;•&nbsp; GitHub til stjernerne &nbsp;•&nbsp; En
+          pingvin godkendte dette deploy &nbsp;•&nbsp; Ingen .git-filer blev
+          skadet &nbsp;•&nbsp;
+        </span>
+      </div>
     </div>
 
     <div class="orb orb-a" aria-hidden="true"></div>
@@ -78,6 +85,7 @@
         "Tilkald deploy-geden",
         "Mere magi, tak",
         "Hold for popcorn",
+        "Serveren blinker venligt tilbage",
       ];
 
       let clicks = 0;
@@ -88,9 +96,10 @@
 
       btn.addEventListener("click", () => {
         clicks += 1;
+        const i = clicks % slogans.length;
         counter.textContent = "Antal kosmiske optryk: " + clicks;
-        headline.textContent = slogans[clicks % slogans.length];
-        btn.textContent = btnTexts[clicks % btnTexts.length];
+        headline.textContent = slogans[i];
+        btn.textContent = btnTexts[i];
         moodText.textContent =
           Math.min(99, 70 + clicks * 3) + "% euforisk, resten er kaos";
         document.body.classList.toggle("party", clicks % 2 === 1);

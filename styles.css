@@ -46,9 +46,15 @@ body.party {
   white-space: nowrap;
 }
 
-.marquee span {
-  display: inline-block;
+.marquee-track {
+  display: inline-flex;
+  width: max-content;
   animation: scroll 22s linear infinite;
+}
+
+.marquee-copy {
+  flex: 0 0 auto;
+  padding-right: 2rem;
   font-size: 0.85rem;
   font-weight: 600;
   color: #ffe66d;
