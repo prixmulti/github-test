@@ -3,107 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Månen er en luftpude</title>
+    <title>githubtest</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span class="marquee-copy">
-          FTP til månen &nbsp;•&nbsp; GitHub til stjernerne &nbsp;•&nbsp; En
-          pingvin godkendte dette deploy &nbsp;•&nbsp; Ingen .git-filer blev
-          skadet &nbsp;•&nbsp;
-        </span>
-        <span class="marquee-copy">
-          FTP til månen &nbsp;•&nbsp; GitHub til stjernerne &nbsp;•&nbsp; En
-          pingvin godkendte dette deploy &nbsp;•&nbsp; Ingen .git-filer blev
-          skadet &nbsp;•&nbsp;
-        </span>
-      </div>
-    </div>
+    <header>
+      <h1>githubtest</h1>
+    </header>
 
-    <div class="orb orb-a" aria-hidden="true"></div>
-    <div class="orb orb-b" aria-hidden="true"></div>
-  <div class="duck-parade" aria-hidden="true">🦆🛸🦆🥞🦆</div>
-
-    <main class="card">
-      <p class="badge">Deploy-klasse: spaghetti</p>
-
-      <p class="spin-pizza" aria-hidden="true">🍕</p>
-
-      <h1 id="headline">Velkommen til det helt almindelige</h1>
-      <p class="lead">
-        Dette er en <em>meget officiel</em> hjemmeside drevet af ren tro på, at
-        <code>git push</code> er magi. Serveren sidder i
-        <code>githubtest</code> og tænker sikkert dybe FTP-tanker.
+    <main>
+      <p>
+        Dette er en testside. Den ligger i mappen githubtest på serveren og
+        opdateres, når der pushes til main på GitHub.
       </p>
 
-      <p class="version" id="version">
-        Udgave 3: 19. nov 2026 - nu med andagt, maraton og en irriterende knap
-      </p>
+      <p class="meta">Sidst opdateret: 19. november 2026</p>
 
-      <section class="mood">
-        <p class="mood-label">Serverens humør lige nu:</p>
-        <div class="mood-bar" role="img" aria-label="Server humør: euphorisk">
-          <span class="mood-fill" style="width: 94%"></span>
-        </div>
-        <p class="mood-text" id="moodText">94% euforisk, 6% kaffe</p>
-      </section>
+      <hr />
 
-      <section class="fun-facts">
-        <h2>Wikianswer (upålidelig kilde)</h2>
-        <ul class="checks">
-          <li>Bagsejle er nu certificeret sky-captain</li>
-          <li>FTP står for “Fantastic Tiny Plunder”</li>
-          <li>Statistisk set: 1 af 1 deploys overrasker forfatteren</li>
-        </ul>
-      </section>
-
-      <button type="button" class="chaos-btn" id="chaosBtn">
-        Tryk mig, jeg er en FTP-knap
-      </button>
-      <p class="btn-counter" id="btnCounter">Antal kosmiske optryk: 0</p>
-
-      <p class="footer-line">
-        Næste skridt: commit, push, stir på Actions, triumfer.
+      <p>
+        Kontakt: ingen. Formål: at verificere deploy fra GitHub Actions via
+        FTP.
       </p>
     </main>
 
-    <script>
-      const slogans = [
-        "Velkommen til det helt almindelige",
-        "DIN CSS ER MILD OG OMRØRT",
-        "Hej mor, jeg deployer!",
-        "Bagsejle.com: nu med flere pixels",
-        "index.html går til 11",
-        "Serveren blinker venligt",
-      ];
-
-      const btnTexts = [
-        "Udsend flere emojier",
-        "Ping FTP'en igen",
-        "Tilkald deploy-geden",
-        "Mere magi, tak",
-        "Hold for popcorn",
-        "Serveren blinker venligt tilbage",
-      ];
-
-      let clicks = 0;
-      const btn = document.getElementById("chaosBtn");
-      const counter = document.getElementById("btnCounter");
-      const headline = document.getElementById("headline");
-      const moodText = document.getElementById("moodText");
-
-      btn.addEventListener("click", () => {
-        clicks += 1;
-        const i = clicks % slogans.length;
-        counter.textContent = "Antal kosmiske optryk: " + clicks;
-        headline.textContent = slogans[i];
-        btn.textContent = btnTexts[i];
-        moodText.textContent =
-          Math.min(99, 70 + clicks * 3) + "% euforisk, resten er kaos";
-        document.body.classList.toggle("party", clicks % 2 === 1);
-      });
-    </script>
+    <footer>
+      <p>&copy; 2026</p>
+    </footer>
   </body>
 </html>
