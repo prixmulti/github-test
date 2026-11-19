@@ -56,7 +56,7 @@ git push -u origin main
 | `FTP_SERVER` | Kun værtsnavn/IP, uden `ftp://` |
 | `FTP_USERNAME` | FTP-brugernavn fra cPanel |
 | `FTP_PASSWORD` | FTP-adgangskode |
-| `FTP_SERVER_DIR` | Sti på serveren med slash til sidst. Brug `./` hvis FTP-kontoens rod allerede er den rigtige mappe. Fx `/public_html/github-test/` hvis du upload til den fulde sti fra serverroden |
+| `FTP_SERVER_DIR` | **Relativ sti fra FTP-login**, med slash til sidst. Brug **ikke** `/home/bruger/...` på cPanel (det kan oprette mapperne `home/bruger/...` ved en fejl). Fx `githubtest/` når du ved login ser mappen `githubtest` i roden. Brug `./` kun hvis FTP-kontoens Document Root allerede *er* `githubtest` |
 
 **Vigtigt:** Commit aldrig adgangskoder i koden. Kun Secrets.
 
