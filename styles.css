@@ -626,6 +626,22 @@ h1 {
     object-fit: contain;
     max-height: 20rem;
   }
+
+  .hilsen-img-btn {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: zoom-in;
+    text-align: left;
+  }
+
+  .hilsen-img-btn:focus-visible {
+    outline: 2px solid rgba(251, 191, 36, 0.85);
+    outline-offset: 2px;
+  }
 }
 
 .hilsen-name {
@@ -661,4 +677,85 @@ h1 {
     font-size: 0.94rem;
     border-radius: 0.35rem;
   }
+}
+
+.hilsen-lightbox {
+  width: min(96vw, 52rem);
+  max-height: 92vh;
+  padding: 0;
+  border: none;
+  border-radius: 0.85rem;
+  background: transparent;
+  color: #f8fafc;
+}
+
+.hilsen-lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(6px);
+}
+
+.hilsen-lightbox-inner {
+  margin: 0;
+  padding: 0.85rem;
+  background: rgba(10, 15, 30, 0.97);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.85rem;
+}
+
+.lightbox-close {
+  display: block;
+  margin: 0 0 0.5rem auto;
+  width: 2.25rem;
+  height: 2.25rem;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #cbd5e1;
+  background: rgba(51, 65, 85, 0.7);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.lightbox-img-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+  max-height: min(68vh, 720px);
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 0.55rem;
+}
+
+.lightbox-img {
+  display: block;
+  max-width: 100%;
+  max-height: min(66vh, 700px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0.35rem;
+}
+
+.lightbox-name {
+  margin: 0 0 0.15rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fef08a;
+}
+
+.lightbox-date {
+  margin: 0 0 0.55rem;
+  font-size: 0.78rem;
+  color: #93c5fd;
+}
+
+.lightbox-msg {
+  margin: 0;
+  font-size: 0.96rem;
+  line-height: 1.55;
+  color: #f1f5f9;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
