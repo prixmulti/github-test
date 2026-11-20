@@ -2,11 +2,6 @@
   const grid = document.getElementById("hilsenGrid");
   const empty = document.getElementById("hilsenEmpty");
   const error = document.getElementById("hilsenError");
-  const lightbox = document.getElementById("hilsenLightbox");
-  const lightboxImg = document.getElementById("lightboxImg");
-  const lightboxName = document.getElementById("lightboxName");
-  const lightboxDate = document.getElementById("lightboxDate");
-  const lightboxMsg = document.getElementById("lightboxMsg");
 
   if (!grid) {
     return;
@@ -26,64 +21,6 @@
     }
   };
 
-  const escapeHtml = (value) => {
-    return String(value)
-      .replaceAll("&", "&amp;")
-      .replaceAll("<", "&lt;")
-      .replaceAll(">", "&gt;")
-      .replaceAll('"', "&quot;");
-  };
-
-  const openLightbox = (item) => {
-    if (!lightbox || !lightboxImg) {
-      return;
-    }
-
-    lightboxImg.src = item.image || "";
-    lightboxImg.alt = "Billede fra " + (item.name || "gæst");
-
-    if (lightboxName) {
-      lightboxName.textContent = item.name || "Anonym";
-    }
-    if (lightboxDate) {
-      lightboxDate.textContent = formatDate(item.created);
-    }
-    if (lightboxMsg) {
-      lightboxMsg.textContent = item.message || "";
-    }
-
-    lightbox.showModal();
-  };
-
-  const closeLightbox = () => {
-    lightbox?.close();
-    if (lightboxImg) {
-      lightboxImg.removeAttribute("src");
-    }
-  };
-
-  lightbox?.querySelectorAll("[data-close-lightbox]").forEach((el) => {
-    el.addEventListener("click", closeLightbox);
-  });
-
-  lightbox?.addEventListener("click", (event) => {
-    const rect = lightbox.getBoundingClientRect();
-    const inDialog =
-      rect.top <= event.clientY &&
-      event.clientY <= rect.top + rect.height &&
-      rect.left <= event.clientX &&
-      event.clientX <= rect.left + rect.width;
-    if (!inDialog) {
-      closeLightbox();
-    }
-  });
-
-  lightbox?.addEventListener("close", () => {
-    if (lightboxImg) {
-      lightboxImg.removeAttribute("src");
-    }
-  });
-
   const render = (items) => {
     grid.innerHTML = "";
 
@@ -91,25 +28,17 @@
       const card = document.createElement("article");
       card.className = "hilsen-card";
 
-      const imgBtn = document.createElement("button");
-      imgBtn.type = "button";
-      imgBtn.className = "hilsen-img-btn";
-      imgBtn.setAttribute("aria-label", "Forstør billede fra " + (item.name || "gæst"));
-
-      const imgWrap = document.createElement("div");
-      imgWrap.className = "hilsen-img-wrap";
+      const figure = document.createElement("figure");
+      figure.className = "hilsen-figure";
 
       const img = document.createElement("img");
       img.className = "hilsen-img";
       img.src = item.image || "";
-      img.alt = "";
+      img.alt = "Billede fra " + (item.name || "gæst");
       img.loading = "lazy";
       img.decoding = "async";
 
-      imgWrap.appendChild(img);
-      imgBtn.appendChild(imgWrap);
-
-      imgBtn.addEventListener("click", () => openLightbox(item));
+      figure.appendChild(img);
 
       const body = document.createElement("div");
       body.className = "hilsen-card-body";
@@ -130,7 +59,7 @@
       body.appendChild(dateEl);
       body.appendChild(msgEl);
 
-      card.appendChild(imgBtn);
+      card.appendChild(figure);
       card.appendChild(body);
       grid.appendChild(card);
     });
