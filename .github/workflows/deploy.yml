@@ -28,6 +28,11 @@ jobs:
             .git/**
             **/.github/**
             **/README.md
+            .gitignore
             data/hilsner.json
-            uploads/**
+            uploads/*
             !uploads/.htaccess
+            !uploads/.gitkeep
+            data/*
+            !data/.htaccess
+            !data/.gitkeep

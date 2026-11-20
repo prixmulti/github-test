@@ -1,6 +1,1 @@
 Options -Indexes
-<Files "hilsner.json">
-  Require all denied
-  Order allow,deny
-  Deny from all
-</Files>
