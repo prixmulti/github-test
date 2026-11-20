@@ -73,26 +73,26 @@ body {
   z-index: 1;
   overflow: hidden;
   pointer-events: none;
-  opacity: 0.62;
+  opacity: 0.72;
 }
 
 .glyph {
   position: absolute;
   left: var(--x, 50%);
   top: var(--y, 50%);
-  font-size: var(--size, 1.5rem);
-  color: rgba(186, 230, 253, 0.4);
-  text-shadow: 0 0 18px rgba(59, 130, 246, 0.35);
+  font-size: var(--size, 3.75rem);
+  color: rgba(186, 230, 253, 0.48);
+  text-shadow: 0 0 28px rgba(59, 130, 246, 0.45);
 }
 
 .glyph-clef {
-  font-size: var(--size, 2.25rem);
+  font-size: var(--size, 5.5rem);
 }
 
 .g1 {
   --x: 10%;
   --y: 18%;
-  --size: 2.5rem;
+  --size: 6.25rem;
   animation: orbitA 32s linear -4s infinite;
 }
 
@@ -123,7 +123,7 @@ body {
 .g10 {
   --x: 90%;
   --y: 55%;
-  --size: 2.8rem;
+  --size: 6.5rem;
   animation: orbitB 36s linear -10s infinite;
 }
 
@@ -255,10 +255,10 @@ h1 {
 }
 
 .line {
-  margin: 0 0 0.22rem;
+  margin: 0 0 0.38rem;
   font-size: clamp(0.76rem, 4.65cqw, 1.22rem);
   font-weight: 600;
-  line-height: 1.12;
+  line-height: 1.2;
   color: #f1f5f9;
   white-space: nowrap;
   hyphens: none;
@@ -266,7 +266,7 @@ h1 {
 }
 
 .line:last-of-type {
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.55rem;
 }
 
 .chorus {
