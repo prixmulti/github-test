@@ -106,13 +106,8 @@
       img.loading = "lazy";
       img.decoding = "async";
 
-      const zoomHint = document.createElement("span");
-      zoomHint.className = "hilsen-zoom-hint";
-      zoomHint.textContent = "Forstør";
-
       imgWrap.appendChild(img);
       imgBtn.appendChild(imgWrap);
-      imgBtn.appendChild(zoomHint);
 
       imgBtn.addEventListener("click", () => openLightbox(item));
 
