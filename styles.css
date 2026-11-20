@@ -9,22 +9,58 @@ body {
   min-height: 100vh;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   color: #1e293b;
-  background: linear-gradient(160deg, #ecfeff 0%, #f0fdf4 45%, #faf5ff 100%);
+  background-color: #0f172a;
+  background-image:
+    radial-gradient(ellipse 90% 70% at 10% 15%, rgba(56, 189, 248, 0.55), transparent 55%),
+    radial-gradient(ellipse 75% 60% at 90% 20%, rgba(244, 114, 182, 0.45), transparent 50%),
+    radial-gradient(ellipse 80% 65% at 85% 90%, rgba(167, 139, 250, 0.5), transparent 55%),
+    radial-gradient(ellipse 70% 55% at 15% 85%, rgba(52, 211, 153, 0.4), transparent 50%),
+  linear-gradient(
+    135deg,
+    #0f172a 0%,
+    #1e3a8a 22%,
+    #5b21b6 48%,
+    #0e7490 72%,
+    #134e4a 100%
+  );
+  background-size: 120% 120%, 120% 120%, 120% 120%, 120% 120%, 100% 100%;
+  background-position: 0% 0%, 100% 0%, 100% 100%, 0% 100%, center;
+  animation: bgShift 18s ease-in-out infinite alternate;
   display: grid;
   place-items: center;
   padding: 2rem 1.25rem;
+}
+
+@keyframes bgShift {
+  0% {
+    background-position:
+      0% 10%,
+      100% 0%,
+      90% 100%,
+      10% 90%,
+      center;
+  }
+  100% {
+    background-position:
+      20% 30%,
+      80% 20%,
+      100% 80%,
+      0% 70%,
+      center;
+  }
 }
 
 .wrap {
   width: 100%;
   max-width: 26rem;
   padding: 2rem 2.25rem;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
   border-radius: 1rem;
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   box-shadow:
-    0 4px 6px -1px rgba(15, 23, 42, 0.06),
-    0 20px 40px -12px rgba(14, 116, 144, 0.15);
+    0 4px 6px -1px rgba(15, 23, 42, 0.15),
+    0 24px 48px -12px rgba(0, 0, 0, 0.35);
 }
 
 .tag {
