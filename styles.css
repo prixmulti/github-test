@@ -234,7 +234,7 @@ h1 {
 
 .song {
   container-type: inline-size;
-  margin-top: clamp(8rem, 27vh, 13.5rem);
+  margin-top: clamp(6.25rem, 19vh, 10rem);
   margin-bottom: 0.35rem;
   background: rgba(10, 15, 30, 0.9);
   backdrop-filter: blur(12px);
@@ -295,7 +295,7 @@ h1 {
   }
 
   .song {
-    margin-top: clamp(8.5rem, 28vh, 14rem);
+    margin-top: clamp(6.5rem, 20vh, 10.5rem);
   }
 }
 
@@ -305,7 +305,7 @@ h1 {
   }
 
   .song {
-    margin-top: clamp(7.25rem, 25vh, 12rem);
+    margin-top: clamp(5.75rem, 17vh, 9rem);
   }
 }
 
