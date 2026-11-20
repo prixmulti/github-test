@@ -513,33 +513,22 @@ h1 {
 }
 
 .page-hilsen .wrap-hilsen {
-  max-width: 56rem;
-  padding-top: 1.5rem;
+  max-width: 62rem;
+  padding-top: 1.25rem;
 }
 
 .hilsen-page-head {
-  margin-bottom: 1.25rem;
-}
-
-.back-link {
-  display: inline-block;
-  margin-bottom: 0.65rem;
-  font-size: 0.85rem;
-  color: #93c5fd;
-  text-decoration: none;
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .hilsen-page-head h1 {
   display: block;
-  margin: 0 0 0.35rem;
-  font-size: clamp(1.5rem, 5vw, 2.1rem);
-  color: #fff;
-}
-
-.hilsen-page-lead {
   margin: 0;
-  font-size: 0.92rem;
-  color: #cbd5e1;
+  font-size: clamp(1.65rem, 5vw, 2.35rem);
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 2px 18px rgba(251, 191, 36, 0.35);
 }
 
 .hilsen-empty,
@@ -548,6 +537,7 @@ h1 {
   padding: 0.75rem 1rem;
   border-radius: 0.5rem;
   font-size: 0.9rem;
+  text-align: center;
 }
 
 .hilsen-empty {
@@ -563,12 +553,13 @@ h1 {
 .hilsen-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 1.15rem;
 }
 
 @media (min-width: 640px) {
   .hilsen-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
   }
 }
 
@@ -580,47 +571,194 @@ h1 {
 
 .hilsen-card {
   overflow: hidden;
-  background: rgba(10, 15, 30, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 0.75rem;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+  background: linear-gradient(180deg, rgba(18, 24, 48, 0.96) 0%, rgba(10, 15, 30, 0.95) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 1rem;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.32);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hilsen-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.38);
+}
+
+.hilsen-img-btn {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: zoom-in;
 }
 
 .hilsen-img-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 12rem;
-  max-height: 28rem;
-  padding: 0.5rem;
-  background: rgba(0, 0, 0, 0.35);
+  aspect-ratio: 4 / 3;
+  max-height: 22rem;
+  padding: 0.65rem;
+  background:
+    radial-gradient(ellipse at center, rgba(56, 189, 248, 0.12), transparent 65%),
+    rgba(0, 0, 0, 0.4);
 }
 
 .hilsen-img {
   display: block;
   max-width: 100%;
-  max-height: 26rem;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0.4rem;
+}
+
+.hilsen-zoom-hint {
+  position: absolute;
+  right: 0.65rem;
+  bottom: 0.55rem;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #0f172a;
+  background: rgba(254, 240, 138, 0.92);
+  border-radius: 999px;
+}
+
+.hilsen-card-body {
+  padding: 0.9rem 1rem 1.05rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hilsen-name {
+  margin: 0 0 0.2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fef08a;
+}
+
+.hilsen-date {
+  margin: 0 0 0.65rem;
+  font-size: 0.72rem;
+  color: #93c5fd;
+}
+
+.hilsen-msg {
+  margin: 0;
+  padding: 0.65rem 0.75rem;
+  font-size: 0.94rem;
+  font-style: normal;
+  line-height: 1.5;
+  color: #f1f5f9;
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: rgba(30, 58, 138, 0.22);
+  border-left: 3px solid rgba(251, 191, 36, 0.65);
+  border-radius: 0.35rem;
+}
+
+.hilsen-lightbox {
+  width: min(96vw, 52rem);
+  max-height: 92vh;
+  padding: 0;
+  border: none;
+  border-radius: 0.85rem;
+  background: transparent;
+  color: #f8fafc;
+}
+
+.hilsen-lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(6px);
+}
+
+.hilsen-lightbox-inner {
+  margin: 0;
+  padding: 0.85rem;
+  background: rgba(10, 15, 30, 0.97);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.85rem;
+}
+
+.lightbox-close {
+  display: block;
+  margin: 0 0 0.5rem auto;
+  width: 2.25rem;
+  height: 2.25rem;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #cbd5e1;
+  background: rgba(51, 65, 85, 0.7);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.lightbox-img-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+  max-height: min(68vh, 720px);
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 0.55rem;
+}
+
+.lightbox-img {
+  display: block;
+  max-width: 100%;
+  max-height: min(66vh, 700px);
   width: auto;
   height: auto;
   object-fit: contain;
   border-radius: 0.35rem;
 }
 
-.hilsen-card-body {
-  padding: 0.75rem 0.85rem 0.9rem;
+.lightbox-name {
+  margin: 0 0 0.15rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fef08a;
 }
 
-.hilsen-meta {
-  margin: 0 0 0.4rem;
-  font-size: 0.75rem;
+.lightbox-date {
+  margin: 0 0 0.55rem;
+  font-size: 0.78rem;
   color: #93c5fd;
 }
 
-.hilsen-msg {
+.lightbox-msg {
   margin: 0;
-  font-size: 0.92rem;
-  line-height: 1.45;
+  font-size: 0.96rem;
+  line-height: 1.55;
   color: #f1f5f9;
   white-space: pre-wrap;
   word-break: break-word;
+}
+
+@media (max-width: 640px) {
+  .hilsen-lightbox {
+    width: 100vw;
+    max-height: 100vh;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .hilsen-lightbox-inner {
+    min-height: 100vh;
+    border-radius: 0;
+    padding: max(0.75rem, env(safe-area-inset-top)) 0.65rem 1rem;
+  }
+
+  .lightbox-img-frame {
+    min-height: 55vh;
+    max-height: 62vh;
+  }
 }

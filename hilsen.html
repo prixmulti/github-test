@@ -21,15 +21,11 @@
 
     <main class="wrap wrap-hilsen">
       <header class="hilsen-page-head">
-        <a class="back-link" href="index.html">← Tilbage til sangen</a>
         <h1>Hilsener til Henning</h1>
-        <p class="hilsen-page-lead">
-          Alle hilsener og billeder fra gæsterne samles her automatisk.
-        </p>
       </header>
 
       <p id="hilsenEmpty" class="hilsen-empty" hidden>
-        Der er endnu ingen hilsener. Vær den første fra forsiden.
+        Der er endnu ingen hilsener.
       </p>
       <p id="hilsenError" class="hilsen-error" hidden>
         Kunne ikke hente hilsener. Prøv at genindlæse siden.
@@ -37,6 +33,22 @@
 
       <div id="hilsenGrid" class="hilsen-grid"></div>
     </main>
+
+    <dialog id="hilsenLightbox" class="hilsen-lightbox" aria-label="Forstørret hilsen">
+      <div class="hilsen-lightbox-inner">
+        <button type="button" class="lightbox-close" data-close-lightbox aria-label="Luk">
+          ×
+        </button>
+        <div class="lightbox-img-frame">
+          <img id="lightboxImg" class="lightbox-img" alt="" />
+        </div>
+        <div class="lightbox-details">
+          <p id="lightboxName" class="lightbox-name"></p>
+          <p id="lightboxDate" class="lightbox-date"></p>
+          <p id="lightboxMsg" class="lightbox-msg"></p>
+        </div>
+      </div>
+    </dialog>
 
     <script src="js/hilsen-gallery.js" defer></script>
   </body>
