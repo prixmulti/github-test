@@ -11,6 +11,26 @@
     return;
   }
 
+  const messageField = form.querySelector('textarea[name="message"]');
+  const messagePlaceholder = messageField?.getAttribute("placeholder") || "";
+
+  const restoreMessagePlaceholder = () => {
+    if (!messageField || !messagePlaceholder) {
+      return;
+    }
+    if (!messageField.value.trim()) {
+      messageField.setAttribute("placeholder", messagePlaceholder);
+    }
+  };
+
+  messageField?.addEventListener("focus", () => {
+    if (!messageField.value.trim() && messagePlaceholder) {
+      messageField.removeAttribute("placeholder");
+    }
+  });
+
+  messageField?.addEventListener("blur", restoreMessagePlaceholder);
+
   const setStatus = (text, isError) => {
     if (!statusEl) {
       return;
@@ -83,6 +103,7 @@
       }
 
       form.reset();
+      restoreMessagePlaceholder();
       if (fileNameEl) {
         fileNameEl.textContent = "";
       }
