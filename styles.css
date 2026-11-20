@@ -216,9 +216,9 @@ h1 {
   flex-direction: column;
   align-items: flex-end;
   margin: 0;
-  font-size: clamp(2rem, 8.5vw, 2.85rem);
+  font-size: clamp(1.65rem, 7.2vw, 2.5rem);
   font-weight: 800;
-  line-height: 1.05;
+  line-height: 0.98;
   color: #fff;
   text-shadow: 0 2px 20px rgba(251, 191, 36, 0.4);
 }
@@ -229,25 +229,25 @@ h1 {
 
 .song {
   container-type: inline-size;
-  margin-top: clamp(9.5rem, 31vh, 15.5rem);
-  margin-bottom: 0.5rem;
+  margin-top: clamp(8rem, 27vh, 13.5rem);
+  margin-bottom: 0.35rem;
   background: rgba(10, 15, 30, 0.9);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 1rem;
-  padding: 1.2rem 0.45rem;
+  border-radius: 0.85rem;
+  padding: 0.75rem 0.4rem 0.85rem;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
 }
 
 .verse + .verse {
-  margin-top: 2rem;
-  padding-top: 2rem;
+  margin-top: 0.85rem;
+  padding-top: 0.85rem;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .verse-label {
-  margin: 0 0 1rem;
-  font-size: 0.8rem;
+  margin: 0 0 0.4rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -255,10 +255,10 @@ h1 {
 }
 
 .line {
-  margin: 0 0 0.7rem;
-  font-size: clamp(0.78rem, 4.72cqw, 1.28rem);
+  margin: 0 0 0.22rem;
+  font-size: clamp(0.76rem, 4.65cqw, 1.22rem);
   font-weight: 600;
-  line-height: 1.28;
+  line-height: 1.12;
   color: #f1f5f9;
   white-space: nowrap;
   hyphens: none;
@@ -266,13 +266,13 @@ h1 {
 }
 
 .line:last-of-type {
-  margin-bottom: 1.1rem;
+  margin-bottom: 0.45rem;
 }
 
 .chorus {
   margin: 0;
-  padding: 0.85rem 0.35rem;
-  font-size: clamp(1.15rem, 8.4cqw, 1.95rem);
+  padding: 0.5rem 0.3rem;
+  font-size: clamp(1.05rem, 7.8cqw, 1.75rem);
   font-weight: 800;
   letter-spacing: 0.08em;
   white-space: nowrap;
@@ -290,6 +290,16 @@ h1 {
   }
 
   .song {
-    margin-top: clamp(10rem, 33vh, 16.5rem);
+    margin-top: clamp(8.5rem, 28vh, 14rem);
+  }
+}
+
+@media (max-width: 390px) {
+  .hero-sax {
+    height: min(62vh, 500px);
+  }
+
+  .song {
+    margin-top: clamp(7.25rem, 25vh, 12rem);
   }
 }
