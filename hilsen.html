@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1e3a8a" />
+    <title>Hilsener til Henning</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-hilsen">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-bg-shade"></div>
+    </div>
+
+    <div class="music-scene" aria-hidden="true">
+      <span class="glyph glyph-clef g1">𝄞</span>
+      <span class="glyph g4">♫</span>
+      <span class="glyph glyph-clef g10">𝄞</span>
+      <span class="glyph g11">♪</span>
+    </div>
+
+    <main class="wrap wrap-hilsen">
+      <header class="hilsen-page-head">
+        <a class="back-link" href="index.html">← Tilbage til sangen</a>
+        <h1>Hilsener til Henning</h1>
+        <p class="hilsen-page-lead">
+          Alle hilsener og billeder fra gæsterne samles her automatisk.
+        </p>
+      </header>
+
+      <p id="hilsenEmpty" class="hilsen-empty" hidden>
+        Der er endnu ingen hilsener. Vær den første fra forsiden.
+      </p>
+      <p id="hilsenError" class="hilsen-error" hidden>
+        Kunne ikke hente hilsener. Prøv at genindlæse siden.
+      </p>
+
+      <div id="hilsenGrid" class="hilsen-grid"></div>
+    </main>
+
+    <script src="js/hilsen-gallery.js" defer></script>
+  </body>
+</html>

@@ -212,6 +212,11 @@ body {
   text-align: right;
 }
 
+.title-block .camera-btn,
+.title-block .hilsen-view-link-wrap {
+  margin-left: auto;
+}
+
 h1 {
   display: flex;
   flex-direction: column;
@@ -303,4 +308,280 @@ h1 {
   .song {
     margin-top: clamp(7.25rem, 25vh, 12rem);
   }
+}
+
+.camera-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.65rem;
+  padding: 0.45rem 0.75rem;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  background: rgba(30, 58, 138, 0.55);
+  border: 1px solid rgba(186, 230, 253, 0.35);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.camera-btn:hover {
+  background: rgba(37, 99, 235, 0.55);
+}
+
+.camera-icon {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.hilsen-view-link-wrap {
+  margin: 0.45rem 0 0;
+  font-size: 0.75rem;
+}
+
+.hilsen-view-link-wrap a {
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+.hilsen-view-link-wrap a:hover {
+  text-decoration: underline;
+}
+
+.hilsen-dialog {
+  width: min(92vw, 24rem);
+  padding: 0;
+  border: none;
+  border-radius: 0.85rem;
+  background: transparent;
+  color: #e2e8f0;
+}
+
+.hilsen-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(4px);
+}
+
+.hilsen-dialog-inner {
+  margin: 0;
+  padding: 1rem;
+  background: rgba(10, 15, 30, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.85rem;
+}
+
+.hilsen-dialog-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.hilsen-dialog-head h2 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #fef08a;
+}
+
+.dialog-close {
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.35rem;
+  line-height: 1;
+  color: #cbd5e1;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.field {
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.field span {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 0.55rem 0.65rem;
+  font: inherit;
+  font-size: 0.9rem;
+  color: #f8fafc;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 0.45rem;
+}
+
+.field input[type="file"] {
+  padding: 0.4rem;
+  font-size: 0.82rem;
+}
+
+.form-status {
+  min-height: 1.25rem;
+  margin: 0.25rem 0 0.65rem;
+  font-size: 0.82rem;
+  color: #94a3b8;
+}
+
+.form-status.is-success {
+  color: #86efac;
+}
+
+.form-status.is-error {
+  color: #fca5a5;
+}
+
+.dialog-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 0.5rem 0.85rem;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 0.45rem;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  color: #0f172a;
+  background: linear-gradient(180deg, #fde047, #fbbf24);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  color: #e2e8f0;
+  background: rgba(51, 65, 85, 0.85);
+}
+
+.page-hilsen .wrap-hilsen {
+  max-width: 56rem;
+  padding-top: 1.5rem;
+}
+
+.hilsen-page-head {
+  margin-bottom: 1.25rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 0.65rem;
+  font-size: 0.85rem;
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+.hilsen-page-head h1 {
+  display: block;
+  margin: 0 0 0.35rem;
+  font-size: clamp(1.5rem, 5vw, 2.1rem);
+  color: #fff;
+}
+
+.hilsen-page-lead {
+  margin: 0;
+  font-size: 0.92rem;
+  color: #cbd5e1;
+}
+
+.hilsen-empty,
+.hilsen-error {
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.hilsen-empty {
+  background: rgba(30, 58, 138, 0.35);
+  color: #dbeafe;
+}
+
+.hilsen-error {
+  background: rgba(127, 29, 29, 0.35);
+  color: #fecaca;
+}
+
+.hilsen-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .hilsen-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .hilsen-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.hilsen-card {
+  overflow: hidden;
+  background: rgba(10, 15, 30, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.75rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+}
+
+.hilsen-img-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 12rem;
+  max-height: 28rem;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.hilsen-img {
+  display: block;
+  max-width: 100%;
+  max-height: 26rem;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0.35rem;
+}
+
+.hilsen-card-body {
+  padding: 0.75rem 0.85rem 0.9rem;
+}
+
+.hilsen-meta {
+  margin: 0 0 0.4rem;
+  font-size: 0.75rem;
+  color: #93c5fd;
+}
+
+.hilsen-msg {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: #f1f5f9;
+  white-space: pre-wrap;
+  word-break: break-word;
 }

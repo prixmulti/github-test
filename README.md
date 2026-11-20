@@ -81,9 +81,26 @@ Log fra FTP-handshake står i Actions-loggen under step **FTP Deploy**.
 
 ## Filer i projektet
 
-- `index.html` – testside
+- `index.html` – fødsdagssang + knap til hilsen
+- `hilsen.html` – oversigt over hilsener og billeder til Henning
+- `upload.php` – modtager hilsen og billede (kræver PHP på serveren)
+- `api/hilsner.php` – returnerer hilsener som JSON
+- `data/` – `hilsner.json` oprettes på serveren (deployes ikke fra Git)
+- `uploads/` – uploadede billeder på serveren (deploy overskriver ikke indhold)
 - `styles.css` – styling
 - `.github/workflows/deploy.yml` – deploy ved push til `main`
+
+## Hilsener og billeder
+
+1. Gæster trykker på **kamera-knappen** på forsiden og uploader hilsen + billede.
+2. PHP gemmer data i `data/hilsner.json` og billeder i `uploads/`.
+3. Henning åbner **`hilsen.html`** for at se alle hilsener.
+
+**Krav på serveren:** PHP skal være slået til (standard på cPanel). Mapperne `data/` og `uploads/` skal kunne skrives af PHP (0755). Ved fejl: tjek filrettigheder i cPanel File Manager.
+
+**Bemærk:** HEIC fra iPhone uploades, men vises kun hvis browseren understøtter formatet. JPG/PNG anbefales hvis et billede ikke vises.
+
+**Vigtigt:** Git-deploy uploader ikke `data/hilsner.json` og ikke filer i `uploads/`, så eksisterende hilsener slettes ikke ved push.
 
 ## Lokal forhåndsvisning
 

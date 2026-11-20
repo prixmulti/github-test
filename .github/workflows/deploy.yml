@@ -28,3 +28,6 @@ jobs:
             .git/**
             **/.github/**
             **/README.md
+            data/hilsner.json
+            uploads/**
+            !uploads/.htaccess
