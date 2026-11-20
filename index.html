@@ -77,16 +77,21 @@
             ></textarea>
           </label>
 
-          <label class="field">
+          <div class="field">
             <span>Billede</span>
-            <input
-              type="file"
-              name="image"
-              accept="image/*,.heic,.heif"
-              required
-            />
-            <span class="field-hint">På mobil kan du vælge kamera eller fotos fra telefonen.</span>
-          </label>
+            <div class="file-picker">
+              <input
+                type="file"
+                id="hilsenImage"
+                class="file-input-native"
+                name="image"
+                accept="image/*,.heic,.heif"
+                required
+              />
+              <span class="file-picker-btn" aria-hidden="true">Send billede</span>
+              <span class="file-picker-name" id="hilsenFileName"></span>
+            </div>
+          </div>
 
           <p id="hilsenFormStatus" class="form-status" role="status"></p>
 

@@ -3,6 +3,8 @@
   const dialog = document.getElementById("hilsenDialog");
   const form = document.getElementById("hilsenForm");
   const statusEl = document.getElementById("hilsenFormStatus");
+  const imageInput = document.getElementById("hilsenImage");
+  const fileNameEl = document.getElementById("hilsenFileName");
   const closeTargets = dialog?.querySelectorAll("[data-close-dialog]");
 
   if (!openBtn || !dialog || !form) {
@@ -28,6 +30,14 @@
   };
 
   openBtn.addEventListener("click", openDialog);
+
+  imageInput?.addEventListener("change", () => {
+    if (!fileNameEl) {
+      return;
+    }
+    const file = imageInput.files?.[0];
+    fileNameEl.textContent = file ? file.name : "";
+  });
 
   closeTargets?.forEach((el) => {
     el.addEventListener("click", closeDialog);
@@ -73,6 +83,9 @@
       }
 
       form.reset();
+      if (fileNameEl) {
+        fileNameEl.textContent = "";
+      }
       setStatus("Tak! Hilsenen er gemt til Henning.", false);
       setTimeout(closeDialog, 1400);
     } catch {
