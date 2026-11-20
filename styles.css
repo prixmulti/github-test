@@ -8,47 +8,16 @@ body {
   position: relative;
   margin: 0;
   min-height: 100vh;
+  min-height: 100dvh;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  color: #1e293b;
+  color: #f8fafc;
   background-color: #0f172a;
   background-image:
-    radial-gradient(ellipse 90% 70% at 10% 15%, rgba(56, 189, 248, 0.55), transparent 55%),
-    radial-gradient(ellipse 75% 60% at 90% 20%, rgba(244, 114, 182, 0.45), transparent 50%),
-    radial-gradient(ellipse 80% 65% at 85% 90%, rgba(167, 139, 250, 0.5), transparent 55%),
-    radial-gradient(ellipse 70% 55% at 15% 85%, rgba(52, 211, 153, 0.4), transparent 50%),
-  linear-gradient(
-    135deg,
-    #0f172a 0%,
-    #1e3a8a 22%,
-    #5b21b6 48%,
-    #0e7490 72%,
-    #134e4a 100%
-  );
-  background-size: 120% 120%, 120% 120%, 120% 120%, 120% 120%, 100% 100%;
-  background-position: 0% 0%, 100% 0%, 100% 100%, 0% 100%, center;
-  animation: bgShift 18s ease-in-out infinite alternate;
-  display: grid;
-  place-items: center;
-  padding: 2rem 1.25rem;
-}
-
-@keyframes bgShift {
-  0% {
-    background-position:
-      0% 10%,
-      100% 0%,
-      90% 100%,
-      10% 90%,
-      center;
-  }
-  100% {
-    background-position:
-      20% 30%,
-      80% 20%,
-      100% 80%,
-      0% 70%,
-      center;
-  }
+    radial-gradient(ellipse 90% 70% at 10% 15%, rgba(56, 189, 248, 0.45), transparent 55%),
+    radial-gradient(ellipse 75% 60% at 90% 20%, rgba(251, 191, 36, 0.35), transparent 50%),
+    radial-gradient(ellipse 80% 65% at 85% 90%, rgba(167, 139, 250, 0.45), transparent 55%),
+    linear-gradient(160deg, #0f172a 0%, #1e3a8a 40%, #5b21b6 70%, #0e7490 100%);
+  background-attachment: fixed;
 }
 
 .music-scene {
@@ -57,217 +26,121 @@ body {
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
+  opacity: 0.6;
 }
 
 .glyph {
   position: absolute;
   left: var(--x, 50%);
   top: var(--y, 50%);
-  font-size: var(--size, 1.75rem);
-  color: rgba(255, 255, 255, 0.42);
-  text-shadow: 0 0 24px rgba(56, 189, 248, 0.35);
-  will-change: transform, opacity;
+  font-size: var(--size, 1.5rem);
+  color: rgba(255, 255, 255, 0.35);
 }
 
 .glyph-clef {
-  font-size: var(--size, 2.75rem);
-  color: rgba(255, 255, 255, 0.55);
+  font-size: var(--size, 2.25rem);
 }
 
 .g1 {
-  --x: 8%;
-  --y: 20%;
-  --size: 3rem;
-  animation: orbitA 32s linear -4s infinite, fadeGlyph 32s ease-in-out -4s infinite;
-}
-
-.g2 {
-  --x: 88%;
-  --y: 70%;
-  --size: 2.6rem;
-  animation: orbitB 38s linear -12s infinite, fadeGlyph 38s ease-in-out -12s infinite;
+  --x: 10%;
+  --y: 18%;
+  --size: 2.5rem;
+  animation: orbitA 32s linear -4s infinite;
 }
 
 .g3 {
-  --x: 15%;
-  --y: 80%;
-  animation: driftRight 24s linear -2s infinite, fadeGlyph 24s ease-in-out -2s infinite;
+  --x: 85%;
+  --y: 25%;
+  animation: driftLeft 28s linear -6s infinite;
 }
 
 .g4 {
-  --x: 75%;
-  --y: 15%;
-  animation: driftLeft 30s linear -8s infinite, fadeGlyph 30s ease-in-out -8s infinite;
+  --x: 8%;
+  --y: 75%;
+  animation: driftRight 26s linear -3s infinite;
 }
 
 .g5 {
-  --x: 50%;
-  --y: 10%;
-  animation: sway 26s ease-in-out -6s infinite, fadeGlyph 26s ease-in-out -6s infinite;
+  --x: 78%;
+  --y: 80%;
+  animation: sway 30s ease-in-out -8s infinite;
 }
 
 .g6 {
-  --x: 30%;
-  --y: 55%;
-  animation: driftRight 22s linear -15s infinite, fadeGlyph 22s ease-in-out -15s infinite;
-}
-
-.g7 {
-  --x: 92%;
-  --y: 40%;
-  animation: orbitA 27s linear -3s infinite, fadeGlyph 27s ease-in-out -3s infinite;
-}
-
-.g8 {
-  --x: 5%;
-  --y: 45%;
-  animation: driftLeft 34s linear -20s infinite, fadeGlyph 34s ease-in-out -20s infinite;
-}
-
-.g9 {
-  --x: 60%;
-  --y: 85%;
-  animation: sway 29s ease-in-out -11s infinite, fadeGlyph 29s ease-in-out -11s infinite;
+  --x: 50%;
+  --y: 8%;
+  animation: sway 24s ease-in-out -12s infinite;
 }
 
 .g10 {
-  --x: 40%;
-  --y: 30%;
-  --size: 3.2rem;
-  animation: orbitB 40s linear -18s infinite, fadeGlyph 40s ease-in-out -18s infinite;
+  --x: 90%;
+  --y: 55%;
+  --size: 2.8rem;
+  animation: orbitB 36s linear -10s infinite;
 }
 
 .g11 {
-  --x: 82%;
-  --y: 88%;
-  animation: driftRight 21s linear -5s infinite, fadeGlyph 21s ease-in-out -5s infinite;
-}
-
-.g12 {
-  --x: 22%;
-  --y: 12%;
-  animation: driftLeft 33s linear -14s infinite, fadeGlyph 33s ease-in-out -14s infinite;
+  --x: 20%;
+  --y: 45%;
+  animation: driftRight 22s linear -5s infinite;
 }
 
 .g13 {
-  --x: 68%;
-  --y: 50%;
-  animation: orbitA 25s linear -9s infinite, fadeGlyph 25s ease-in-out -9s infinite;
-}
-
-.g14 {
-  --x: 48%;
-  --y: 72%;
-  animation: sway 31s ease-in-out -16s infinite, fadeGlyph 31s ease-in-out -16s infinite;
-}
-
-.g15 {
-  --x: 95%;
-  --y: 22%;
-  --size: 2.8rem;
-  animation: driftRight 36s linear -7s infinite, fadeGlyph 36s ease-in-out -7s infinite;
-}
-
-.g16 {
-  --x: 12%;
-  --y: 62%;
-  animation: orbitB 28s linear -13s infinite, fadeGlyph 28s ease-in-out -13s infinite;
+  --x: 65%;
+  --y: 90%;
+  animation: orbitA 27s linear -7s infinite;
 }
 
 @keyframes orbitA {
-  0% {
-    transform: translate(0, 0) rotate(-12deg);
-  }
-  25% {
-    transform: translate(18vw, -12vh) rotate(8deg);
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(-8deg);
   }
   50% {
-    transform: translate(32vw, 8vh) rotate(22deg);
-  }
-  75% {
-    transform: translate(10vw, 18vh) rotate(-5deg);
-  }
-  100% {
-    transform: translate(0, 0) rotate(-12deg);
+    transform: translate(12vw, -8vh) rotate(12deg);
   }
 }
 
 @keyframes orbitB {
-  0% {
-    transform: translate(0, 0) rotate(10deg);
-  }
-  33% {
-    transform: translate(-22vw, 10vh) rotate(-18deg);
-  }
-  66% {
-    transform: translate(-8vw, -16vh) rotate(5deg);
-  }
+  0%,
   100% {
-    transform: translate(0, 0) rotate(10deg);
+    transform: translate(0, 0) rotate(8deg);
+  }
+  50% {
+    transform: translate(-14vw, 10vh) rotate(-14deg);
   }
 }
 
 @keyframes driftRight {
   0% {
-    transform: translate(-15vw, 0) rotate(0deg);
-  }
-  50% {
-    transform: translate(55vw, -20vh) rotate(25deg);
+    transform: translate(-10vw, 0);
   }
   100% {
-    transform: translate(105vw, 5vh) rotate(0deg);
+    transform: translate(90vw, -5vh);
   }
 }
 
 @keyframes driftLeft {
   0% {
-    transform: translate(15vw, 0) rotate(0deg);
-  }
-  50% {
-    transform: translate(-45vw, 15vh) rotate(-20deg);
+    transform: translate(10vw, 0);
   }
   100% {
-    transform: translate(-95vw, -8vh) rotate(0deg);
+    transform: translate(-80vw, 8vh);
   }
 }
 
 @keyframes sway {
   0%,
   100% {
-    transform: translate(0, 0) rotate(-8deg) scale(1);
-  }
-  25% {
-    transform: translate(12vw, -8vh) rotate(12deg) scale(1.08);
+    transform: translate(0, 0) rotate(-5deg);
   }
   50% {
-    transform: translate(-8vw, 12vh) rotate(-15deg) scale(0.95);
-  }
-  75% {
-    transform: translate(6vw, 6vh) rotate(6deg) scale(1.05);
-  }
-}
-
-@keyframes fadeGlyph {
-  0%,
-  100% {
-    opacity: 0.15;
-  }
-  20%,
-  80% {
-    opacity: 0.55;
-  }
-  50% {
-    opacity: 0.75;
+    transform: translate(8vw, -6vh) rotate(8deg);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .glyph {
-    animation: none;
-    opacity: 0.2;
-  }
-
-  body {
     animation: none;
   }
 }
@@ -276,89 +149,92 @@ body {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 26rem;
-  padding: 2rem 2.25rem;
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(8px);
-  border-radius: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  box-shadow:
-    0 4px 6px -1px rgba(15, 23, 42, 0.15),
-    0 24px 48px -12px rgba(0, 0, 0, 0.35);
+  max-width: 28rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 2.5rem;
+  padding-left: max(1.25rem, env(safe-area-inset-left));
+  padding-right: max(1.25rem, env(safe-area-inset-right));
+  padding-bottom: max(2.5rem, env(safe-area-inset-bottom));
+}
+
+.title-block {
+  text-align: center;
+  margin-bottom: 1.75rem;
 }
 
 .tag {
   display: inline-block;
-  margin: 0 0 0.75rem;
-  padding: 0.2rem 0.65rem;
+  margin: 0 0 0.65rem;
+  padding: 0.25rem 0.75rem;
   font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #0e7490;
-  background: #cffafe;
+  color: #fef3c7;
+  background: rgba(251, 191, 36, 0.25);
   border-radius: 999px;
 }
 
 h1 {
-  margin: 0 0 0.75rem;
-  font-size: 1.85rem;
-  font-weight: 700;
-  color: #0f172a;
-  letter-spacing: -0.02em;
-}
-
-.lead {
-  margin: 0 0 1.25rem;
-  line-height: 1.6;
-  color: #475569;
-}
-
-.lead strong {
-  color: #0f766e;
-}
-
-.pill-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.pill {
-  padding: 0.35rem 0.75rem;
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: #64748b;
-  background: #f1f5f9;
-  border-radius: 999px;
-}
-
-.pill-ok {
-  color: #166534;
-  background: #dcfce7;
-}
-
-.steps h2 {
-  margin: 0 0 0.65rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: #94a3b8;
-}
-
-.steps ol {
   margin: 0;
-  padding-left: 1.2rem;
-  line-height: 1.75;
-  color: #475569;
+  font-size: clamp(2rem, 8vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #fff;
+  text-shadow: 0 2px 20px rgba(251, 191, 36, 0.4);
 }
 
-code {
-  font-size: 0.85em;
-  padding: 0.12em 0.4em;
-  background: #f1f5f9;
-  border-radius: 0.25rem;
-  color: #0e7490;
+.song {
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1rem;
+  padding: 1.5rem 1.25rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.verse + .verse {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.verse-label {
+  margin: 0 0 1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fcd34d;
+}
+
+.line {
+  margin: 0 0 0.85rem;
+  font-size: clamp(1.2rem, 5.2vw, 1.45rem);
+  font-weight: 600;
+  line-height: 1.45;
+  color: #f1f5f9;
+}
+
+.line:last-of-type {
+  margin-bottom: 1.1rem;
+}
+
+.chorus {
+  margin: 0;
+  padding: 0.85rem 0.5rem;
+  font-size: clamp(1.55rem, 6.5vw, 1.9rem);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-align: center;
+  color: #fef08a;
+  text-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+  background: rgba(251, 191, 36, 0.12);
+  border-radius: 0.5rem;
+}
+
+@media (min-width: 480px) {
+  .wrap {
+    padding-top: 2.5rem;
+  }
 }
